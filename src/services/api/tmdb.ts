@@ -1,0 +1,25 @@
+import { api } from "./http";
+
+export async function getTopRated(page: number = 1) {
+
+    try {
+        const { data } = await api.get(`/discover/movie`,
+            {
+                params: {
+                    language: "pt-br",
+                    page,
+                    include_adult: false,
+                    include_video: false,
+                    sort_by: "vote_average.desc",
+                    without_genres: "99,10755",
+                    "vote_count.gte": 200
+                }
+            }
+        );
+        return data.results;
+    } catch (error) {
+        console.error("Error ao buscar filmes (services/api/tmdb/getTopRated): ", error);
+        throw error;
+    }
+
+}
