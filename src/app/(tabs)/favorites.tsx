@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import Favorites from "../screens/Favorites";
+import Favorites from "../../screens/Favorites";
 
 export default function FavoritesTabs() {
     return (
