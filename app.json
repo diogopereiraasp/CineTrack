@@ -25,6 +25,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "expermients": {
+      "tsconfigPaths": true
+    },
+    "router": {
+      "origin": "auto"
     }
   }
 }
