@@ -1,7 +1,7 @@
+import { Movie } from "../../types/movie";
 import { api } from "./http";
 
-export async function getTopRated(page: number = 1) {
-
+export async function getTopRated(page: number = 1): Promise<Movie[]> {
     try {
         const { data } = await api.get(`/discover/movie`,
             {
@@ -21,5 +21,4 @@ export async function getTopRated(page: number = 1) {
         console.error("Error ao buscar filmes (services/api/tmdb/getTopRated): ", error);
         throw error;
     }
-
 }

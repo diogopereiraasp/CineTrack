@@ -12,24 +12,35 @@ import {
     PopularityRow,
     Popularity
 } from "./styles";
+import { Movie } from "../../types/movie";
 
-export default function MovieCard() {
+type Props = {
+    movie: Movie;
+};
+
+export default function MovieCard({ movie }: Props) {
+
+    const year = movie.release_date ? `(${new Date(movie.release_date).getFullYear()})` : '';
+    const img = movie.poster_path
+        ? `https://image.tmdb.org/t/p/w342${movie.poster_path}`
+        : undefined;
+
     return (
         <Container>
-            <Image source={{ uri: 'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg' }} />
+            <Image source={{ uri: img }} />
             <Info>
                 <TitleRow>
-                    <Title numberOfLines={2}>Movie card Name</Title>
-                    <ReleaseDate>(2023)</ReleaseDate>
+                    <Title numberOfLines={2}>{movie.title}</Title>
+                    <ReleaseDate>{year}</ReleaseDate>
                 </TitleRow>
                 <AverageRow>
                     <Feather name="star" size={14} color="#FFD700" />
-                    <Average>8.5</Average>
-                    <Votes>(17951 votos)</Votes>
+                    <Average>{movie.vote_average}</Average>
+                    <Votes>({movie.vote_count} votos)</Votes>
                 </AverageRow>
                 <PopularityRow>
                     <Feather name="trending-up" size={12} color="#00FF00" />
-                    <Popularity>54.848</Popularity>
+                    <Popularity>{movie.popularity}</Popularity>
                 </PopularityRow>
             </Info>
         </Container>
