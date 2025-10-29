@@ -57,6 +57,7 @@ export default function Home() {
 
     return (
         <Container>
+
             <Title>CineTrack</Title>
 
             <Search />

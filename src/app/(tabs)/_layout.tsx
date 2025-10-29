@@ -1,28 +1,31 @@
 import { Tabs } from "expo-router";
 import { Feather } from "@expo/vector-icons";
 import { fontSizes } from "../../styles/theme/typography";
+import { colors } from "../../styles/theme/colors";
 
 export default function TabsLayout() {
     return (
         <Tabs
             screenOptions={{
-                headerShown: false
+                headerShown: false,
+                tabBarStyle: { backgroundColor: colors.black },
+                tabBarShowLabel: false,
+                tabBarActiveTintColor: colors.primary,
+                tabBarInactiveTintColor: colors.textSecondary,
             }}
         >
             <Tabs.Screen
                 name="index"
                 options={{
-                    title: "Home",
                     tabBarIcon: () => (
-                        <Feather name="film" size={fontSizes.icon} color="black" />
+                        <Feather name="film" size={fontSizes.icon} />
                     )
                 }} />
             <Tabs.Screen
                 name="favorites"
                 options={{
-                    title: "Favoritos",
                     tabBarIcon: () => (
-                        <Feather name="heart" size={fontSizes.icon} color="black" />
+                        <Feather name="heart" size={fontSizes.icon} />
                     )
                 }} />
         </Tabs>
