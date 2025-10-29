@@ -3,22 +3,21 @@ import {
     Container,
     Image,
     Info,
-    TitleRow,
+    Row,
     Title,
     ReleaseDate,
-    AverageRow,
     Average,
     Votes,
-    PopularityRow,
     Popularity
 } from "./styles";
 import { Movie } from "../../types/movie";
 
 type Props = {
     movie: Movie;
+    onPress?: () => void;
 };
 
-export default function MovieCard({ movie }: Props) {
+export default function MovieCard({ movie, onPress }: Props) {
 
     const year = movie.release_date ? `(${new Date(movie.release_date).getFullYear()})` : '';
     const img = movie.poster_path
@@ -26,22 +25,22 @@ export default function MovieCard({ movie }: Props) {
         : undefined;
 
     return (
-        <Container>
+        <Container onPress={onPress} activeOpacity={0.8}>
             <Image source={{ uri: img }} />
             <Info>
-                <TitleRow>
+                <Row>
                     <Title numberOfLines={2}>{movie.title}</Title>
                     <ReleaseDate>{year}</ReleaseDate>
-                </TitleRow>
-                <AverageRow>
+                </Row>
+                <Row>
                     <Feather name="star" size={14} color="#FFD700" />
                     <Average>{movie.vote_average}</Average>
                     <Votes>({movie.vote_count} votos)</Votes>
-                </AverageRow>
-                <PopularityRow>
+                </Row>
+                <Row>
                     <Feather name="trending-up" size={12} color="#00FF00" />
                     <Popularity>{movie.popularity}</Popularity>
-                </PopularityRow>
+                </Row>
             </Info>
         </Container>
     );

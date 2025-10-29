@@ -1,11 +1,10 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
     background-color: #222;
     border-radius: 12px;
     margin-bottom: 16px;
-
-    height: 130px;
+    height: 120px;
 
     flex-direction: row;
     overflow: hidden;
@@ -26,10 +25,9 @@ export const Info = styled.View`
     gap: 8px;
 `;
 
-export const TitleRow = styled.View`
+export const Row = styled.View`
     flex-direction: row;
     align-items: baseline;
-    flex-wrap: wrap;
 `;
 
 export const Title = styled.Text`
@@ -47,11 +45,6 @@ export const ReleaseDate = styled.Text`
     flex-shrink: 0;
 `;
 
-export const AverageRow = styled.View`
-    flex-direction: row;
-    align-items: center;
-`;
-
 export const Average = styled.Text`
     font-size: 14px;
     color: #fff;
@@ -62,11 +55,6 @@ export const Votes = styled.Text`
     font-size: 10px;
     color: #ccc;
     margin-left: 6px;
-`;
-
-export const PopularityRow = styled.View`
-    flex-direction: row;
-    align-items: center;
 `;
 
 export const Popularity = styled.Text`
