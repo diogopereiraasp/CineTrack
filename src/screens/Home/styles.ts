@@ -15,6 +15,7 @@ export const Title = styled.Text`
     font-size: ${fontSizes.display}px;
     color: ${colors.textPrimary};
     font-weight: bold;
+    margin-top: 24px;
 `;
 
 export const SubTitle = styled.Text`
