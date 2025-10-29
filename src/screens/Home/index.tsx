@@ -4,8 +4,7 @@ import { ActivityIndicator, FlatList } from 'react-native';
 import { getTopRated } from '../../services/api/tmdb';
 import type { Movie } from '../../types/movie';
 import MovieCard from '../../components/MovieCard';
-import { Container, SubTitle } from '../../styles/global';
-import { Title } from './styles';
+import { Container, SubTitle, Title } from './styles';
 import Search from '../../components/Search';
 
 export default function Home() {
@@ -60,7 +59,7 @@ export default function Home() {
         <Container>
             <Title>CineTrack</Title>
 
-            {/* <Search /> */}
+            <Search />
 
             <SubTitle>Melhores avaliados</SubTitle>
 

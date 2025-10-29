@@ -11,6 +11,8 @@ import {
     Popularity
 } from "./styles";
 import { Movie } from "../../types/movie";
+import { colors } from "../../styles/theme/colors";
+import { fontSizes } from "../../styles/theme/typography";
 
 type Props = {
     movie: Movie;
@@ -33,12 +35,12 @@ export default function MovieCard({ movie, onPress }: Props) {
                     <ReleaseDate>{year}</ReleaseDate>
                 </Row>
                 <Row>
-                    <Feather name="star" size={14} color="#FFD700" />
+                    <Feather name="star" size={fontSizes.smallIcon} color={colors.starIcon} />
                     <Average>{movie.vote_average}</Average>
                     <Votes>({movie.vote_count} votos)</Votes>
                 </Row>
                 <Row>
-                    <Feather name="trending-up" size={12} color="#00FF00" />
+                    <Feather name="trending-up" size={fontSizes.smallIcon} color={colors.trendingIcon} />
                     <Popularity>{movie.popularity}</Popularity>
                 </Row>
             </Info>
