@@ -6,6 +6,8 @@ export const fontSizes = {
     label: 14,
     caption: 12,
     small: 10,
+    icon: 24,
+    smallIcon: 12,
 };
 
 export const fontWeights = {
