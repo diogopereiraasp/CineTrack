@@ -5,13 +5,14 @@ import {
     Input,
     ButtonSearch
 } from "./styles";
+import { colors } from "../../styles/theme/colors";
 
 export default function Search() {
     return (
         <Container>
             <Input />
             <ButtonSearch>
-                <Ionicons name="search" size={25} color="#fff" />
+                <Ionicons name="search" size={25} color={colors.textPrimary} />
             </ButtonSearch>
         </Container>
     );

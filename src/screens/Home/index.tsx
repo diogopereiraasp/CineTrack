@@ -60,7 +60,7 @@ export default function Home() {
         <Container>
             <Title>CineTrack</Title>
 
-            {/* <Search /> */}
+            <Search />
 
             <SubTitle>Melhores avaliados</SubTitle>
 
