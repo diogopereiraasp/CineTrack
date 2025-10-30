@@ -6,69 +6,60 @@ import { ButtonTrash, Container, EmptyIconContainer, EmptyState, EmptyText, Head
 import { Feather } from '@expo/vector-icons';
 import { colors } from '@/styles/theme/colors';
 import { useRouter } from 'expo-router';
+import { useConfirmAlert } from '@/hooks/useConfirmAlert';
 
 export default function FavoritesScreen() {
-    const router = useRouter();
-    const dispatch = useDispatch();
-    const favorites = useSelector(selectFavorites);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const { showConfirm } = useConfirmAlert();
 
-    function handleClearAll() {
-        if (!favorites.length) {
-            Alert.alert('Favoritos', 'Sua lista já está vazia.');
-            return;
-        }
-
-        Alert.alert(
-            'Excluir todos?',
-            'Tem certeza que deseja excluir toda a lista de favoritos?',
-            [
-                { text: 'Cancelar', style: 'cancel' },
-                {
-                    text: 'Excluir',
-                    style: 'destructive',
-                    onPress: () => {
-                        dispatch(clearFavorites());
-                        Alert.alert('Favoritos', 'A lista foi excluída.');
-                    },
-                },
-            ],
-            { cancelable: true }
-        );
+  function handleClearAll() {
+    if (!favorites.length) {
+      Alert.alert('Favoritos', 'Sua lista já está vazia.');
+      return;
     }
 
-    return (
-        <Container>
-            <Header>
-                <Title>Meus Filmes Favoritos</Title>
-                <ButtonTrash onPress={handleClearAll} activeOpacity={0.7}>
-                    <Feather name="trash" size={26} color={colors.textPrimary} />
-                </ButtonTrash>
-            </Header>
+    showConfirm({
+      title: 'Excluir todos?',
+      message: 'Tem certeza que deseja excluir toda a lista de favoritos?',
+      confirmText: 'Excluir',
+      cancelText: 'Cancelar',
+      onConfirm: () => {
+        dispatch(clearFavorites());
+        Alert.alert('Favoritos', 'A lista foi excluída.');
+      },
+    });
+  }
 
-            <FlatList
-                data={favorites}
-                keyExtractor={(i) => String(i.id)}
-                renderItem={({ item }) => (
-                    <MovieCard
-                        movie={item}
-                        onPress={() =>
-                            router.push({ pathname: '/details', params: { id: item.id } })
-                        }
-                    />
-                )}
-                contentContainerStyle={{
-                    padding: 16,
-                    flexGrow: 1,
-                }}
-                ListEmptyComponent={
-                    <EmptyState>
-                        <EmptyIconContainer>
-                            <Feather name="heart" size={48} color={colors.textSecondary} />
-                        </EmptyIconContainer>
-                        <EmptyText>Você ainda não tem filmes favoritados.</EmptyText>
-                    </EmptyState>
-                }
-            />
-        </Container>
-    );
+  return (
+    <Container>
+      <Header>
+        <Title>Meus Filmes Favoritos</Title>
+        <ButtonTrash onPress={handleClearAll} activeOpacity={0.7}>
+          <Feather name="trash" size={26} color={colors.textPrimary} />
+        </ButtonTrash>
+      </Header>
+
+      <FlatList
+        data={favorites}
+        keyExtractor={(i) => String(i.id)}
+        renderItem={({ item }) => (
+          <MovieCard
+            movie={item}
+            onPress={() => router.push({ pathname: '/details', params: { id: item.id } })}
+          />
+        )}
+        contentContainerStyle={{ padding: 16, flexGrow: 1 }}
+        ListEmptyComponent={
+          <EmptyState>
+            <EmptyIconContainer>
+              <Feather name="heart" size={48} color={colors.textSecondary} />
+            </EmptyIconContainer>
+            <EmptyText>Você ainda não tem filmes favoritados.</EmptyText>
+          </EmptyState>
+        }
+      />
+    </Container>
+  );
 }
