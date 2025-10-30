@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { colors } from '../../styles/theme/colors';
-import { fontSizes } from '../../styles/theme/typography';
+import { colors } from '@/styles/theme/colors';
+import { fontSizes } from '@/styles/theme/typography';
 
 export const Container = styled.View`
     flex-direction: row;

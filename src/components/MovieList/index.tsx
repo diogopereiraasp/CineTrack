@@ -1,9 +1,9 @@
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList } from "react-native";
-import { Movie } from "../../types/movie";
-import { getTopRated } from "../../services/api/tmdb";
-import MovieCard from "../MovieCard";
+import { Movie } from "@/types/movie";
+import { getTopRated } from "@/services/api/tmdb";
+import MovieCard from "@/components/MovieCard";
 
 export default function MovieList() {
 

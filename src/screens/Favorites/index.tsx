@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFavorites, clearFavorites } from '../../store/slices/favoritesSlice';
+import { selectFavorites, clearFavorites } from '@/store/slices/favoritesSlice';
 import { FlatList, Alert } from 'react-native';
-import MovieCard from '../../components/MovieCard';
+import MovieCard from '@/components/MovieCard';
 import { ButtonTrash, Container, EmptyIconContainer, EmptyState, EmptyText, Header, Title } from './styles';
 import { Feather } from '@expo/vector-icons';
-import { colors } from '../../styles/theme/colors';
+import { colors } from '@/styles/theme/colors';
 import { useRouter } from 'expo-router';
 
 export default function FavoritesScreen() {

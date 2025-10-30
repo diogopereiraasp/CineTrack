@@ -2,8 +2,8 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 
-import { Movie } from '../../types/movie';
-import { getMovieById } from '../../services/api/tmdb';
+import { Movie } from '@/types/movie';
+import { getMovieById } from '@/services/api/tmdb';
 
 import {
     Container,
@@ -19,10 +19,10 @@ import {
     Body,
     RowButton
 } from './styles';
-import { colors } from '../../styles/theme/colors';
+import { colors } from '@/styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
-import { fontSizes } from '../../styles/theme/typography';
-import FavoriteButton from '../../components/FavoriteButton';
+import { fontSizes } from '@/styles/theme/typography';
+import FavoriteButton from '@/components/FavoriteButton';
 
 export default function Details() {
     const { id } = useLocalSearchParams<{ id: string }>();
