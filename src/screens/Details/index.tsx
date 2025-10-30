@@ -15,7 +15,10 @@ import {
     VoteAverage,
     ReleaseDate,
     Revenue,
-    Body
+    Body,
+    RowButton,
+    FavoriteButton,
+    FavoriteButtonText
 } from './styles';
 import { colors } from '../../styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
@@ -62,6 +65,13 @@ export default function Details() {
                     <Feather name="chevron-right" size={fontSizes.body} color={colors.primary} />
                     <ReleaseDate>{year}</ReleaseDate>
                 </Row>
+
+                <RowButton>
+                    <FavoriteButton activeOpacity={0.7}>
+                        <Feather name="heart" size={fontSizes.icon} color={colors.textPrimary} />
+                        <FavoriteButtonText>Adicionar aos Favoritos</FavoriteButtonText>
+                    </FavoriteButton>
+                </RowButton>
 
                 <Info>
                     <Genre>Genero(s): {movie?.genres.map(genre => genre.name).join(", ")}</Genre>
