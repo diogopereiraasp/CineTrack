@@ -50,7 +50,7 @@ export default function FavoritesScreen() {
             onPress={() => router.push({ pathname: '/details', params: { id: item.id } })}
           />
         )}
-        contentContainerStyle={{ padding: 16, flexGrow: 1 }}
+        contentContainerStyle={{flexGrow: 1 }}
         ListEmptyComponent={
           <EmptyState>
             <EmptyIconContainer>

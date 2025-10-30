@@ -30,19 +30,19 @@ export default function Details() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchDetails() {
-            try {
-                const data = await getMovieById(Number(id));
-                setMovie(data);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        }
-
         if (id) fetchDetails();
     }, [id]);
+
+    async function fetchDetails() {
+        try {
+            const data = await getMovieById(Number(id));
+            setMovie(data);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const year = movie?.release_date ? `${new Date(movie.release_date).getFullYear()}` : '';
     const img = movie?.backdrop_path
