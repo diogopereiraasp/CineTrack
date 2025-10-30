@@ -43,6 +43,7 @@ export default function FavoritesScreen() {
 
       <FlatList
         data={favorites}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(i) => String(i.id)}
         renderItem={({ item }) => (
           <MovieCard

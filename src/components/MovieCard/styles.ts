@@ -10,6 +10,9 @@ export const Container = styled.TouchableOpacity`
 
     flex-direction: row;
     overflow: hidden;
+
+    border-width: 1px;
+    border-color: ${colors.border};
 `;
 
 export const Image = styled.Image`
