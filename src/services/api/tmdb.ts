@@ -28,3 +28,18 @@ export async function getTopRated(page: number = 1): Promise<{
         throw error;
     }
 }
+
+export async function getMovieById(id: number): Promise<Movie> {
+  try {
+    const { data } = await api.get(`/movie/${id}`, {
+      params: {
+        language: 'pt-BR',
+      },
+    });
+
+    return data as Movie;
+  } catch (error) {
+    console.error('Erro ao buscar detalhes do filme (services/api/tmdb/getMovieById):', error);
+    throw error;
+  }
+}

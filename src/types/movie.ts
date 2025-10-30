@@ -11,8 +11,10 @@ export type Movie = {
   popularity: number;
   adult: boolean;
   genre_ids: number[];
+  genres: { id: number; name: string }[];
   original_language: string;
   video: boolean;
+  revenue: number;
 };
 
 export type MovieListResponse = {
