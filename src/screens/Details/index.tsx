@@ -2,7 +2,7 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 
-import { Movie } from '@/types/movie';
+import { Movie } from '@/interface/movie';
 import { getMovieById } from '@/services/api/tmdb';
 
 import {

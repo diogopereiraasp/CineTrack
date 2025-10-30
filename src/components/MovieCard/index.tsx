@@ -10,7 +10,7 @@ import {
     Votes,
     Popularity
 } from "./styles";
-import { Movie } from "@/types/movie";
+import { Movie } from "@/interface/movie";
 import { colors } from "@/styles/theme/colors";
 import { fontSizes } from "@/styles/theme/typography";
 

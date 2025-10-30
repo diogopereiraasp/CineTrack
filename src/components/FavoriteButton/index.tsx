@@ -5,7 +5,7 @@ import { colors } from '@/styles/theme/colors';
 import { fontSizes } from '@/styles/theme/typography';
 
 import { FavoriteButtonText, RowButton, Button } from './styles';
-import { Movie } from '@/types/movie';
+import { Movie } from '@/interface/movie';
 
 type Props = {
     movie: Movie;
