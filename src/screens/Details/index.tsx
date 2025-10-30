@@ -3,7 +3,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 
 import { Movie } from '@/interface/movie';
-import { getMovieById } from '@/services/api/tmdb';
+import { getMovieById } from '@/services/tmdb.services';
 
 import {
     Container,
