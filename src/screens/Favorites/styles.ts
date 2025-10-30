@@ -22,6 +22,7 @@ export const ButtonTrash = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
+    font-family: 'Roboto-Regular-bold';
     font-size: ${fontSizes.display}px;
     color: ${colors.textPrimary};
     font-weight: bold;
@@ -43,6 +44,7 @@ export const EmptyIconContainer = styled.View`
 `;
 
 export const EmptyText = styled.Text`
+  font-family: 'Roboto-Regular';
   color: ${colors.textSecondary};
   font-size: ${fontSizes.body}px;
   text-align: center;

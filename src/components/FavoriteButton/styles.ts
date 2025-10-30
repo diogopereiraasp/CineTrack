@@ -14,6 +14,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const FavoriteButtonText = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textPrimary};
     font-size: ${fontSizes.body}px;
     font-weight: ${fontWeights.medium};

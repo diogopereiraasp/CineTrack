@@ -21,6 +21,7 @@ export const Body = styled.View`
 `;
 
 export const TitleMovie = styled.Text`
+    font-family: 'Roboto-Regular-bold';
     font-size: ${fontSizes.title}px;
     font-weight: ${fontWeights.bold};
     color: ${colors.textPrimary};
@@ -35,28 +36,33 @@ export const Info = styled.View`
 `;
 
 export const Genre = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textPrimary};
     font-size: ${fontSizes.body}px;
 `;
 
 export const OverView = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textSecondary};
     font-size: ${fontSizes.body}px;
     margin-top: 8px;
 `;
 
 export const VoteAverage = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textPrimary};
     font-size: ${fontSizes.label}px;
     margin: 0 8px;
 `;
 
 export const ReleaseDate = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textPrimary};
     font-size: ${fontSizes.label}px;
 `;
 
 export const Revenue = styled.Text`
+    font-family: 'Roboto-Regular';
     color: ${colors.textPrimary};
     font-size: ${fontSizes.body}px;
 `;

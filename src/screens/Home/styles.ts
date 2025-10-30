@@ -12,6 +12,7 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const Title = styled.Text`
+    font-family: 'Roboto-Regular-bold';
     font-size: ${fontSizes.display}px;
     color: ${colors.textPrimary};
     font-weight: bold;
@@ -19,6 +20,7 @@ export const Title = styled.Text`
 `;
 
 export const SubTitle = styled.Text`
+    font-family: 'Roboto-Regular';
     font-size: ${fontSizes.subtitle}px;
     color: ${colors.textSecondary};
     font-weight: 500;

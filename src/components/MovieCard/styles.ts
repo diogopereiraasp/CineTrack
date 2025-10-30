@@ -34,6 +34,7 @@ export const Row = styled.View`
 `;
 
 export const Title = styled.Text`
+    font-family: 'Roboto-Regular-bold';
     font-size: ${fontSizes.subtitle}px;
     color: ${colors.textPrimary};
     font-weight: ${fontWeights.bold};
@@ -42,6 +43,7 @@ export const Title = styled.Text`
 `;
 
 export const ReleaseDate = styled.Text`
+    font-family: 'Roboto-Regular';
     font-size: ${fontSizes.small}px;
     color: ${colors.textTertiary};
     margin-left: 4px;
@@ -49,18 +51,21 @@ export const ReleaseDate = styled.Text`
 `;
 
 export const Average = styled.Text`
+    font-family: 'Roboto-Regular';
     font-size: ${fontSizes.label}px;
     color: ${colors.textPrimary};
     margin-left: 4px;
 `;
 
 export const Votes = styled.Text`
+    font-family: 'Roboto-Regular';
     font-size: ${fontSizes.small}px;
     color: ${colors.textSecondary};
     margin-left: 6px;
 `;
 
 export const Popularity = styled.Text`
+    font-family: 'Roboto-Regular';
     font-size: ${fontSizes.label}px;
     color: ${colors.textPrimary};
     margin-left: 4px;
