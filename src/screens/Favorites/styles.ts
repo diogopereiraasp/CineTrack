@@ -14,7 +14,7 @@ export const Header = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-right: 26px;
+    padding-right: 32px;
 `;
 
 export const ButtonTrash = styled.TouchableOpacity`
