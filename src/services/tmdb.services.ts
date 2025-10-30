@@ -1,5 +1,5 @@
 import { Movie } from "@/interface/movie";
-import { api } from "./http";
+import { api } from "@/libs/axios/tmdbApi";
 
 export async function getTopRated(page: number = 1): Promise<{
     results: Movie[];
