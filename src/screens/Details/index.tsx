@@ -23,6 +23,8 @@ import { colors } from '@/styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
 import { fontSizes } from '@/styles/theme/typography';
 import FavoriteButton from '@/components/FavoriteButton';
+import { getImageUrl } from '@/utils/tmdbImage';
+import { TMDBImageSize } from '@/services/api/constants';
 
 export default function Details() {
     const { id } = useLocalSearchParams<{ id: string }>();
@@ -45,9 +47,7 @@ export default function Details() {
     }
 
     const year = movie?.release_date ? `${new Date(movie.release_date).getFullYear()}` : '';
-    const img = movie?.backdrop_path
-        ? `https://image.tmdb.org/t/p/w342${movie.backdrop_path}`
-        : undefined;
+    const img = getImageUrl(movie?.backdrop_path, TMDBImageSize.MEDIUM);
 
     if (loading) return <ActivityIndicator style={{ marginTop: 40 }} />;
 

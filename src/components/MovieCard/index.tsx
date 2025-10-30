@@ -13,6 +13,8 @@ import {
 import { Movie } from "@/interface/movie";
 import { colors } from "@/styles/theme/colors";
 import { fontSizes } from "@/styles/theme/typography";
+import { TMDBImageSize } from "@/services/api/constants";
+import { getImageUrl } from "@/utils/tmdbImage";
 
 type Props = {
     movie: Movie;
@@ -22,9 +24,7 @@ type Props = {
 export default function MovieCard({ movie, onPress }: Props) {
 
     const year = movie.release_date ? `(${new Date(movie.release_date).getFullYear()})` : '';
-    const img = movie.poster_path
-        ? `https://image.tmdb.org/t/p/w342${movie.poster_path}`
-        : undefined;
+    const img = getImageUrl(movie?.backdrop_path, TMDBImageSize.MEDIUM);
 
     return (
         <Container onPress={onPress} activeOpacity={0.8}>
