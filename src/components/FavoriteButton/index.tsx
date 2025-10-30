@@ -4,7 +4,7 @@ import { Feather } from '@expo/vector-icons';
 import { colors } from '@/styles/theme/colors';
 import { fontSizes } from '@/styles/theme/typography';
 
-import { FavoriteButtonText, RowButton, Button } from './styles';
+import { FavoriteButtonText, Button } from './styles';
 import { Movie } from '@/interface/movie';
 
 type Props = {
