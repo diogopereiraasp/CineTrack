@@ -1,4 +1,4 @@
-import { Stack, useRouter } from 'expo-router';
+import { Stack } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors } from '@/styles/theme/colors';
 import { Provider } from 'react-redux';
@@ -6,8 +6,6 @@ import { persistor, store } from '@/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 export default function RootLayout() {
-
-    const router = useRouter();
 
     return (
         <SafeAreaProvider>
