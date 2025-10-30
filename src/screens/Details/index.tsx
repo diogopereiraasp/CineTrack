@@ -2,8 +2,8 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 
-import { Movie } from '../../types/movie';
-import { getMovieById } from '../../services/api/tmdb';
+import { Movie } from '@/interface/movie';
+import { getMovieById } from '@/services/api/tmdb';
 
 import {
     Container,
@@ -19,10 +19,10 @@ import {
     Body,
     RowButton
 } from './styles';
-import { colors } from '../../styles/theme/colors';
+import { colors } from '@/styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
-import { fontSizes } from '../../styles/theme/typography';
-import FavoriteButton from '../../components/FavoriteButton';
+import { fontSizes } from '@/styles/theme/typography';
+import FavoriteButton from '@/components/FavoriteButton';
 
 export default function Details() {
     const { id } = useLocalSearchParams<{ id: string }>();
@@ -30,19 +30,19 @@ export default function Details() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchDetails() {
-            try {
-                const data = await getMovieById(Number(id));
-                setMovie(data);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
-        }
-
         if (id) fetchDetails();
     }, [id]);
+
+    async function fetchDetails() {
+        try {
+            const data = await getMovieById(Number(id));
+            setMovie(data);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const year = movie?.release_date ? `${new Date(movie.release_date).getFullYear()}` : '';
     const img = movie?.backdrop_path

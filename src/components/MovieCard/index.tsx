@@ -10,9 +10,9 @@ import {
     Votes,
     Popularity
 } from "./styles";
-import { Movie } from "../../types/movie";
-import { colors } from "../../styles/theme/colors";
-import { fontSizes } from "../../styles/theme/typography";
+import { Movie } from "@/interface/movie";
+import { colors } from "@/styles/theme/colors";
+import { fontSizes } from "@/styles/theme/typography";
 
 type Props = {
     movie: Movie;

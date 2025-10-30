@@ -5,8 +5,8 @@ import {
     Input,
     ButtonSearch
 } from "./styles";
-import { colors } from "../../styles/theme/colors";
-import { fontSizes } from "../../styles/theme/typography";
+import { colors } from "@/styles/theme/colors";
+import { fontSizes } from "@/styles/theme/typography";
 
 export default function Search() {
     return (

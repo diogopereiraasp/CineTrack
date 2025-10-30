@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
-import { colors } from "../../styles/theme/colors";
-import { fontSizes, fontWeights } from "../../styles/theme/typography";
+import { colors } from "@/styles/theme/colors";
+import { fontSizes, fontWeights } from "@/styles/theme/typography";
 
 export const Container = styled.ScrollView.attrs({
     showsVerticalScrollIndicator: false,
@@ -18,6 +18,7 @@ export const PosterImage = styled.Image`
 export const Body = styled.View`
     padding: 16px;
     gap: 16px;
+    margin-bottom: 32px;
 `;
 
 export const TitleMovie = styled.Text`

@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import { Feather } from "@expo/vector-icons";
-import { fontSizes } from "../../styles/theme/typography";
-import { colors } from "../../styles/theme/colors";
+import { fontSizes } from "@/styles/theme/typography";
+import { colors } from "@/styles/theme/colors";
 
 export default function TabsLayout() {
   return (

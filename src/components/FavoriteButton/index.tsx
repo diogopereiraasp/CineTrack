@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavorite, selectIsFavorite } from '../../store/slices/favoritesSlice';
+import { toggleFavorite, selectIsFavorite } from '@/store/slices/favoritesSlice';
 import { Feather } from '@expo/vector-icons';
-import { colors } from '../../styles/theme/colors';
-import { fontSizes } from '../../styles/theme/typography';
+import { colors } from '@/styles/theme/colors';
+import { fontSizes } from '@/styles/theme/typography';
 
 import { FavoriteButtonText, RowButton, Button } from './styles';
-import { Movie } from '../../types/movie';
+import { Movie } from '@/interface/movie';
 
 type Props = {
     movie: Movie;

@@ -1,4 +1,4 @@
-import { Movie } from "../../types/movie";
+import { Movie } from "@/interface/movie";
 import { api } from "./http";
 
 export async function getTopRated(page: number = 1): Promise<{

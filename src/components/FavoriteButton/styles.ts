@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
-import { colors } from "../../styles/theme/colors";
-import { fontSizes, fontWeights } from "../../styles/theme/typography";
+import { colors } from "@/styles/theme/colors";
+import { fontSizes, fontWeights } from "@/styles/theme/typography";
 
 export const Button = styled.TouchableOpacity`
     flex: 0.75;
