@@ -65,6 +65,7 @@ export default function MovieList() {
     return (
         <FlatList
             data={movies}
+            showsVerticalScrollIndicator={false}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
                 <MovieCard
