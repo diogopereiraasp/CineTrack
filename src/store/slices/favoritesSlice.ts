@@ -18,10 +18,15 @@ const favoritesSlice = createSlice({
         clearFavorites() {
             return [];
         },
+        toggleFavorite(state, action: PayloadAction<Movie>) {
+            const idx = state.findIndex(m => m.id === action.payload.id);
+            if (idx >= 0) state.splice(idx, 1);
+            else state.push(action.payload);
+        },
     },
 });
 
-export const { addFavorite, removeFavorite, clearFavorites } = favoritesSlice.actions;
+export const { addFavorite, removeFavorite, clearFavorites, toggleFavorite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;
 
 // Selectors

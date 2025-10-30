@@ -61,7 +61,7 @@ export default function MovieList() {
             <FlatList
                 data={movies}
                 keyExtractor={(item) => String(item.id)}
-                renderItem={({ item }) => <MovieCard movie={item} onPress={() => router.push({ pathname: "Details", params: { id: item.id } })} />}
+                renderItem={({ item }) => <MovieCard movie={item} onPress={() => router.push({ pathname: "details", params: { id: item.id } })} />}
                 onEndReached={onEnd}
                 onEndReachedThreshold={0.5}
                 refreshing={refreshing}

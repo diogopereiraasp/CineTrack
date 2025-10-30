@@ -1,6 +1,7 @@
 import { ActivityIndicator, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
+
 import { Movie } from '../../types/movie';
 import { getMovieById } from '../../services/api/tmdb';
 
@@ -16,13 +17,12 @@ import {
     ReleaseDate,
     Revenue,
     Body,
-    RowButton,
-    FavoriteButton,
-    FavoriteButtonText
+    RowButton
 } from './styles';
 import { colors } from '../../styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
 import { fontSizes } from '../../styles/theme/typography';
+import FavoriteButton from '../../components/FavoriteButton';
 
 export default function Details() {
     const { id } = useLocalSearchParams<{ id: string }>();
@@ -33,7 +33,6 @@ export default function Details() {
         async function fetchDetails() {
             try {
                 const data = await getMovieById(Number(id));
-                console.log(data);
                 setMovie(data);
             } catch (err) {
                 console.error(err);
@@ -67,10 +66,7 @@ export default function Details() {
                 </Row>
 
                 <RowButton>
-                    <FavoriteButton activeOpacity={0.7}>
-                        <Feather name="heart" size={fontSizes.icon} color={colors.textPrimary} />
-                        <FavoriteButtonText>Adicionar aos Favoritos</FavoriteButtonText>
-                    </FavoriteButton>
+                    <FavoriteButton movie={movie!} />
                 </RowButton>
 
                 <Info>
