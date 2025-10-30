@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import { Feather } from "@expo/vector-icons";
 import { fontSizes } from "@/styles/theme/typography";
 import { colors } from "@/styles/theme/colors";
+import { Platform } from "react-native";
 
 export default function TabsLayout() {
   return (
@@ -9,8 +10,10 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: colors.black,
+          backgroundColor: colors.header,
           borderTopWidth: 0,
+          paddingTop: 8,
+          height: Platform.OS === 'android' ? 60 : 80,
         },
         tabBarShowLabel: false,
         tabBarActiveTintColor: colors.primary,

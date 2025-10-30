@@ -1,18 +1,16 @@
 import styled from 'styled-components/native';
 import { colors } from '@/styles/theme/colors';
 import { fontSizes, fontWeights } from '@/styles/theme/typography';
+import { Platform } from 'react-native';
+
 
 export const Container = styled.TouchableOpacity`
-    background-color: #${colors.background};
+    background-color: ${colors.card};
     border-radius: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     height: 120px;
-
     flex-direction: row;
     overflow: hidden;
-
-    border-width: 1px;
-    border-color: ${colors.border};
 `;
 
 export const Image = styled.Image`

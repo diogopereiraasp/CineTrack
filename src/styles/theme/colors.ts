@@ -1,7 +1,9 @@
 export const colors = {
     primary: '#FF6500',
     surface: '#1E3E62',
-    background: '#0B192C',
+    background: '#0C2B4E',
+    card: '#0B192C',
+    header: '#0B192C',
     black: '#000000',
     textPrimary: '#FFFFFF',
     textSecondary: 'rgba(255, 255, 255, 0.72)',
