@@ -72,3 +72,28 @@ export const RowButton = styled.View`
     align-items: center;
     justify-content: center;
 `;
+
+export const EmptyContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const EmptyIcon = styled.View`
+  margin-bottom: 16px;
+`;
+
+export const EmptyText = styled.Text`
+  font-size: ${fontSizes.body}px;
+  color: ${colors.textSecondary};
+  text-align: center;
+  line-height: 22px;
+  max-width: 80%;
+`;
+
+export const LoadingContainer = styled.View`
+  flex: 1;
+  background-color: ${colors.background};
+  justify-content: center;
+  align-items: center;
+`;
