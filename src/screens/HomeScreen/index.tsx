@@ -1,7 +1,7 @@
 import { Container, SubTitle, Title } from './styles';
 import MovieList from '@/components/MovieList';
 
-export default function Home() {
+export default function HomeScreen() {
 
     return (
         <Container>

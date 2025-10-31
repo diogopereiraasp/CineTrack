@@ -32,7 +32,7 @@ export default function RootLayout() {
                 <PersistGate persistor={persistor}>
                     <Stack>
                         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                        <Stack.Screen name="details" options={{
+                        <Stack.Screen name="movie" options={{
                             headerTransparent: true,
                             headerTitle: '',
                             headerTintColor: colors.textPrimary,

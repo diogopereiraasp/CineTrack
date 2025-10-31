@@ -48,7 +48,7 @@ export default function FavoritesScreen() {
         renderItem={({ item }) => (
           <MovieCard
             movie={item}
-            onPress={() => router.push({ pathname: '/details', params: { id: item.id } })}
+            onPress={() => router.push({ pathname: '/movie', params: { id: item.id } })}
           />
         )}
         contentContainerStyle={{flexGrow: 1 }}

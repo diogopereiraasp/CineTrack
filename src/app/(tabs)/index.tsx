@@ -1,3 +1,3 @@
-import Home from "@/screens/Home";
+import HomeScreen from "@/screens/HomeScreen";
 
-export default function App() { return <Home /> }
+export default function App() { return <HomeScreen /> }
