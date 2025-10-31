@@ -26,7 +26,7 @@ import FavoriteButton from '@/components/FavoriteButton';
 import { getImageUrl } from '@/utils/tmdbImage';
 import { TMDBImageSize } from '@/services/api/constants';
 
-export default function Details() {
+export default function MovieScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState(true);

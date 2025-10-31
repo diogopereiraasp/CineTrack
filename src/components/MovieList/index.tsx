@@ -71,7 +71,7 @@ export default function MovieList() {
                 <MovieCard
                     movie={item}
                     onPress={() =>
-                        router.push({ pathname: "details", params: { id: item.id } })
+                        router.push({ pathname: "movie", params: { id: item.id } })
                     }
                 />
             )}

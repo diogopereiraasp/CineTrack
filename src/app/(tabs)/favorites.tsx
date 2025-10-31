@@ -1,3 +1,3 @@
-import Favorites from "@/screens/Favorites";
+import FavoritesScreen from "@/screens/FavoritesScreen";
 
-export default function FavoritesTabs() { return <Favorites /> }
+export default function FavoritesTabs() { return <FavoritesScreen /> }
