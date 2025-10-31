@@ -6,6 +6,7 @@ import { persistor, store } from '@/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
 
 export default function RootLayout() {
 
@@ -23,13 +24,14 @@ export default function RootLayout() {
     }, [fontsLoaded]);
 
     if (!fontsLoaded) {
-        return null; // ou algum loading
+        return null;
     }
 
     return (
         <SafeAreaProvider>
             <Provider store={store}>
                 <PersistGate persistor={persistor}>
+                    <StatusBar style="light" backgroundColor={colors.background} />
                     <Stack>
                         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                         <Stack.Screen name="movie" options={{

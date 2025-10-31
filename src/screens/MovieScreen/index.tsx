@@ -18,6 +18,7 @@ import {
   Revenue,
   Body,
   RowButton,
+  LoadingContainer,
 } from './styles';
 import { colors } from '@/styles/theme/colors';
 import { Feather } from '@expo/vector-icons';
@@ -53,7 +54,13 @@ export default function MovieScreen() {
 
   const img = getImageUrl(movie?.backdrop_path, TMDBImageSize.MEDIUM);
 
-  if (loading) return <ActivityIndicator style={{ marginTop: 40 }} />;
+  if (loading) {
+    return (
+      <LoadingContainer>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </LoadingContainer>
+    );
+  }
 
   return (
     <Container>
